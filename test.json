@@ -1,0 +1,29 @@
+{"value_schema": "{\"type\": \"record\",\"name\": \"dbinfo\",\"fields\" : [{\"name": \"sess_no\", \"type\": \"long\"},{\"name\": \"sess_name\", \"type\": \"string\"},{\"name\": \"scen_version\", \"type\": \"string\"},{\"name\": \"log_level\", \"type\": \"long\"},{\"name\": \"sess_beg\", \"type\": \"string\"},{\"name\": \"sess_end\", \"type\": \"string\"},{\"name\": \"sess_dur\", \"type\": \"long\"},{\"name\": \"sess_status\", \"type\": \"string\"},{\"name\": \"agent_name\", \"type\": \"string\"},{\"name\": \"context_code\", \"type\": \"string\"},{\"name\": \"scen_name\", \"type\": \"string\"},{\"name\": \"user_name\", \"type\": \"string\"},{\"name\": \"error_message\", \"type\": \"string\"},{\"name\": \"sess_type\", \"type\": \"string\"},{\"name\": \"global_id\", \"type\": \"string\"}]}", "records": [{"value": {"sess_no": 2201,"log_level":5,"sess_name":"ABCJavaKafkaTopic","scen_version":"null","sess_beg":"2019-03-15 12:05:41.0","sess_end":"2019-03-15 12:05:50.0","sess_status":"D","agent_name":"Internal","context_code":"GLOBAL","scen_name":"null","user_name":"SUPERVISOR","sess_type":"null","global_id":"c1cc41f4-f557-4eca-bda8-211671852c1b","error_message":"null"}},{"value": {"sess_no": 2191,"log_level":5,"sess_name":"ABCJavaKafkaTopic","scen_version":"null","sess_beg":"2019-03-14 20:31:14.0","sess_end":"2019-03-14 20:31:15.0","sess_status":"D","agent_name":"Internal","context_code":"GLOBAL","scen_name":"null","user_name":"SUPERVISOR","sess_type":"null","global_id":"490fdbd4-d867-4280-8451-ecd4a56e27e6","error_message":"null"}},{"value": {"sess_no": 2190,"log_level":5,"sess_name":"ABCJavaKafkaTopic","scen_version":"null","sess_beg":"2019-03-14 20:27:37.0","sess_end":"2019-03-14 20:27:38.0","sess_status":"D","agent_name":"Internal","context_code":"GLOBAL","scen_name":"null","user_name":"SUPERVISOR","sess_type":"null","global_id":"6aadd228-a639-4609-8940-f8f723718941","error_message":"null"}},{"value": {"sess_no": 2189,"log_level":5,"sess_name":"ABCJavaKafkaTopic","scen_version":"null","sess_beg":"2019-03-14 20:11:40.0","sess_end":"2019-03-14 20:11:42.0","sess_status":"D","agent_name":"Internal","context_code":"GLOBAL","scen_name":"null","user_name":"SUPERVISOR","sess_type":"null","global_id":"727b5fc7-ae1d-40f4-b5e9-5ce2c1704cdf","error_message":"null"}},{"value": {"sess_no": 2188,"log_level":5,"sess_name":"Copy of OdiInvokeRESTfulService 3","scen_version":"null","sess_beg":"2019-03-14 20:01:06.0","sess_end":"2019-03-14 20:01:06.0","sess_status":"E","agent_name":"Internal","context_code":"GLOBAL","scen_name":"null","user_name":"SUPERVISOR","sess_type":"null","global_id":"2f7ba77c-6f2b-4fce-b854-7cfb631ec421","error_message":"ODI-1217: Session Copy of OdiInvokeRESTfulService 3 (2188) fails with return code 7000.
+ODI-1226: Step Copy of OdiInvokeRESTfulService 3 fails after 1 attempt(s).
+ODI-1241: Oracle Data Integrator tool execution fails.
+Caused By: oracle.odi.runtime.rest.SnpsRSInvocationException: ODI-30163: REST tool invocation failed with response code : 500. URL : http://192.168.0.113:8082/topics/march_topic 
+	at com.sunopsis.dwg.tools.InvokeRESTfulService.processResponse(InvokeRESTfulService.java:784)
+	at com.sunopsis.dwg.tools.InvokeRESTfulService.invokeRESTService(InvokeRESTfulService.java:767)
+	at com.sunopsis.dwg.tools.InvokeRESTfulService.invokeMainOperation(InvokeRESTfulService.java:589)
+	at com.sunopsis.dwg.tools.InvokeRESTfulService.actionExecute(InvokeRESTfulService.java:523)
+	at com.sunopsis.dwg.function.SnpsFunctionBaseRepositoryConnected.execute(SnpsFunctionBaseRepositoryConnected.java:235)
+	at oracle.odi.runtime.agent.execution.SessionTask.execIntegratedFunction(SessionTask.java:902)
+	at oracle.odi.runtime.agent.execution.SessionTask.executeOdiCommand(SessionTask.java:583)
+	at oracle.odi.runtime.agent.execution.cmd.OdiCommandExecutor.execute(OdiCommandExecutor.java:32)
+	at oracle.odi.runtime.agent.execution.cmd.OdiCommandExecutor.execute(OdiCommandExecutor.java:18)
+	at oracle.odi.runtime.agent.execution.TaskExecutionHandler.handleTask(TaskExecutionHandler.java:52)
+	at oracle.odi.runtime.agent.execution.SessionTask.processTask(SessionTask.java:206)
+	at oracle.odi.runtime.agent.execution.SessionTask.doExecuteTask(SessionTask.java:117)
+	at oracle.odi.runtime.agent.execution.AbstractSessionTask.execute(AbstractSessionTask.java:886)
+	at oracle.odi.runtime.agent.execution.SessionExecutor$SerialTrain.runTasks(SessionExecutor.java:2225)
+	at oracle.odi.runtime.agent.execution.SessionExecutor.executeSession(SessionExecutor.java:610)
+	at oracle.odi.runtime.agent.processor.TaskExecutorAgentRequestProcessor$1.doAction(TaskExecutorAgentRequestProcessor.java:718)
+	at oracle.odi.runtime.agent.processor.TaskExecutorAgentRequestProcessor$1.doAction(TaskExecutorAgentRequestProcessor.java:611)
+	at oracle.odi.core.persistence.dwgobject.DwgObjectTemplate.execute(DwgObjectTemplate.java:203)
+	at oracle.odi.runtime.agent.processor.TaskExecutorAgentRequestProcessor.doProcessStartAgentTask(TaskExecutorAgentRequestProcessor.java:800)
+	at oracle.odi.runtime.agent.processor.impl.StartSessRequestProcessor.access$1400(StartSessRequestProcessor.java:74)
+	at oracle.odi.runtime.agent.processor.impl.StartSessRequestProcessor$StartSessTask.doExecute(StartSessRequestProcessor.java:702)
+	at oracle.odi.runtime.agent.processor.task.AgentTask.execute(AgentTask.java:180)
+	at oracle.odi.runtime.agent.support.DefaultAgentTaskExecutor$2.run(DefaultAgentTaskExecutor.java:108)
+	at java.lang.Thread.run(Thread.java:748)
+"}}]}
