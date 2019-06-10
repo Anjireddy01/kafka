@@ -13,14 +13,18 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 
-public class deptinfo {
-    public static void main(String args[]){
+
+public class deptinfo 
+{
+    public static void main(String args[])
+	{
             long tmill=System.currentTimeMillis();
             String FILENAME = "/home/oracle-odi/kafka/confluent-5.0.1/abc/dept/test/test.json";
                 System.out.println(FILENAME);
                 testdb dbData = new testdb();
                 List<Dept> deptList = dbData.getDeptDetails();
-            try {
+            try 
+		{
 
                 FileWriter fw = new FileWriter(FILENAME, false);
                 BufferedWriter bw = new BufferedWriter(fw);
@@ -30,7 +34,8 @@ public class deptinfo {
                 int count = 0;
                 //bw.newLine();
                 //System.out.println(header);
-                for (Dept dept : deptList) {
+                for (Dept dept : deptList) 
+		{
                     String content = null;
                     String loc=dept.getLoc();
                     String dname=dept.getDname();
@@ -59,7 +64,7 @@ public class deptinfo {
 
                 }
                  catch (IOException e)
-                        {
+                  {
                         e.printStackTrace();
                 }
 
@@ -96,9 +101,13 @@ public class deptinfo {
                                            //abnormal...
                                    }
 
-                           } catch (IOException e) {
+                           } 
+			   catch (IOException e) 
+	               		{
                                    e.printStackTrace();
-                           } catch (InterruptedException e) {
+	                         }
+ 			  catch (InterruptedException e) 
+			   {
                                    e.printStackTrace();
                            }
 
@@ -109,31 +118,40 @@ public class deptinfo {
 
 }
 
-class Dept {
+class Dept 
+{
 
 
-        public String getDname() {
+        public String getDname() 
+        {
                 return dname;
         }
-        public void setDname(String dname) {
+        public void setDname(String dname) 
+        {
                 this.dname = dname;
         }
-        public String getLoc() {
+        public String getLoc() 
+        {
                 return loc;
         }
-        public void setLoc(String loc) {
+        public void setLoc(String loc) 
+        {
                 this.loc = loc;
         }
-        public String getDate() {
+        public String getDate() 
+        {
                 return date;
         }
-        public void setDate(String date) {
+        public void setDate(String date) 
+        {
                 this.date = date;
         }
-        public Integer getDeptno() {
+        public Integer getDeptno() 
+        {
                 return deptno;
         }
-        public void setDeptno(Integer deptno) {
+        public void setDeptno(Integer deptno) 
+        {
                 this.deptno = deptno;
         }
         Integer deptno;
@@ -143,7 +161,8 @@ class Dept {
 
                 }
 
-class testdb {
+class testdb 
+  {
    // JDBC driver name and database URL
    static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
    static final String DB_URL = "jdbc:oracle:thin:@192.168.0.120:1522:orcl9";
@@ -153,10 +172,12 @@ class testdb {
    static final String PASS = "Welcome123";
    List <Dept> deptList = new ArrayList <Dept>();
 
-   public List<Dept> getDeptDetails() {
+   public List<Dept> getDeptDetails() 
+   {
    Connection conn = null;
    Statement stmt = null;
-   try{
+   try
+     {
       //STEP 2: Register JDBC driver
       Class.forName("oracle.jdbc.driver.OracleDriver");
 
@@ -171,11 +192,12 @@ class testdb {
       String sql = "SELECT * FROM deptinfo";
       ResultSet rs = stmt.executeQuery(sql);
       //STEP 5: Extract data from result set
-      while(rs.next()){
-         //Retrieve by column name
-                                 int deptno  = rs.getInt("deptno");
-                                 String dname = rs.getString("dname");
-                                 String loc = rs.getString("loc");
+      while(rs.next())
+        {
+                 //Retrieve by column name
+                 int deptno  = rs.getInt("deptno");
+                 String dname = rs.getString("dname");
+                 String loc = rs.getString("loc");
                  String date = rs.getString("date");
                  Dept dept = new Dept();
                  dept.setDeptno(deptno);
@@ -183,25 +205,37 @@ class testdb {
                  dept.setLoc(loc);
                  dept.setDate(date);
                  deptList.add(dept);
-      }
+        }
       rs.close();
-   }catch(SQLException se){
+   }
+   catch(SQLException se)
+    {
       //Handle errors for JDBC
       se.printStackTrace();
-   }catch(Exception e){
+   }
+  catch(Exception e)
+   {
       //Handle errors for Class.forName
       e.printStackTrace();
-   }finally{
+   }
+ finally
+  {
       //finally block used to close resources
-      try{
+      try
+       {
          if(stmt!=null)
             conn.close();
-      }catch(SQLException se){
+       }
+      catch(SQLException se)
+      {
       }// do nothing
-      try{
+      try
+      {
          if(conn!=null)
             conn.close();
-      }catch(SQLException se){
+      }
+      catch(SQLException se)
+      {
          se.printStackTrace();
       }//end finally try
    }//end try
@@ -212,3 +246,5 @@ class testdb {
 
 }
 
+//Add a line for testing purpose
+//Hi this is for Kafka Application server java code 
